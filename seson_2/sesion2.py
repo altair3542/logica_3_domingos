@@ -33,17 +33,50 @@
 # usa para comparar pares adyacentes.
 # si estan en orden incorrecto, se intercambian y repiten pasadas hasta que no se necesite hacer intercambios. (esto ultimo puede optimizarse.)
 
+
+# arr = [5, 1, 4, 2, 8, 3, 10, 11, 9, 6]
+# n = len(arr)
+# print(arr)
+
+# for pasada in range(n - 1):
+#     hubo_cambio = False
+#     for i in range(n - 1 - pasada):
+#         if arr[i] > arr[i + 1]:
+#             arr[i], arr[i + 1] = arr[i + 1], arr[i]
+#             hubo_cambio = True
+#             print(arr)
+#     if not hubo_cambio:
+#         break
+# print(arr)
+
+
+
+# 3) Método de Inserción (Insertion Sort)
+# Metáfora
+
+# Ordenar cartas en la mano: tomas la carta “actual” y la insertas donde corresponde entre las que ya están ordenadas a la izquierda.
+
+# Idea general
+
+# Recorre desde la posición 1 (segunda carta).
+
+# Guarda la carta actual.
+
+# Desplaza hacia la derecha los que sean mayores que la carta actual.
+
+# Inserta la carta en el hueco que quedó.
+
+print("insercion")
 arr = [5, 1, 4, 2, 8, 3, 10, 11, 9, 6]
-n = len(arr)
+print(arr)
+for i in range(1, len(arr)):
+    actual = arr[i]
+    j = i - 1
+    while j >= 0 and arr[j] > actual:
+        arr[j + 1] = arr[j]
+        j -= 1
+    arr[j + 1] = actual
+
 print(arr)
 
-for pasada in range(n - 1):
-    hubo_cambio = False
-    for i in range(n - 1 - pasada):
-        if arr[i] > arr[i + 1]:
-            arr[i], arr[i + 1] = arr[i + 1], arr[i]
-            hubo_cambio = True
-            print(arr)
-    if not hubo_cambio:
-        break
-print(arr)
+

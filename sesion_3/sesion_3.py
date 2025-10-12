@@ -92,3 +92,87 @@
 #     for f in range(filas):
 #         suma_c += m[f][c]
 #     print(f"Suma de columna {c}: {suma_c}")
+
+# conteo con condicion... (cuantos > 5)
+
+# m = [
+#     [3, 1, 7],
+#     [0, 5, 9],
+#     [6, 8, 2]
+# ]
+
+# # conteo = 0
+# # for f in range(len(m)):
+# #     for c in range(len(m[0])):
+# #         if m[f][c] > 5:
+# #             conteo += 1
+# # print(f"mayores que 5: {conteo}")
+
+
+# # buscar el valor maximo y decir su posicion.
+
+# max_val = m[0][0]
+# pos_f = 0
+# pos_c = 0
+
+# for f in range(len(m)):
+#     for c in range(len(m[0])):
+#         if m[f][c] > max_val:
+#             max_val = m[f][c]
+#             pos_f = f
+#             pos_c = c
+
+# print(f"el maximo: {max_val}, ubicado en: {pos_f},{pos_c}")
+
+#transformacion sumar 1 a cada elemento
+
+# m = [
+#     [3, 1, 2],
+#     [0, 5, 9],
+#     [6, 8, 2]
+# ]
+
+# for f in range(len(m)):
+#     for c in range(len(m[0])):
+#         m[f][c] = m[f][c] +1
+
+# print(m)
+
+
+# transposicion de matrices.
+
+# m = [
+#     [1, 2, 3],
+#     [4, 5, 6]
+# ]
+
+# filas = len(m)
+# cols = len(m[0])
+
+# t = []
+# for c in range(cols):
+#     nueva_fila = []
+#     for f in range(filas):
+#         nueva_fila.append(m[f][c])
+#     t.append(nueva_fila)
+
+# print(f"arreglo og: {m}")
+# print(f"Transpuesta: {t} ")
+
+
+m = [
+    [1, 2, 3],  # 3 x 3
+    [4, 5, 6],
+    [7, 8, 9],
+]
+
+n = len(m)
+print(m)
+for f in range(n):
+    for c in range(f + 1, n):
+        # intercambiar m[f][c] con m[c][f]
+        temp = m[f][c]
+        m[f][c] = m[c][f]
+        m[c][f] = temp
+
+print(f"transpuesta in place: {m}")
